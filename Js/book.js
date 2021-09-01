@@ -15,10 +15,11 @@ const displaySearchResult = books => {
         div.classList.add('col')
         div.innerHTML = `
         <div  class="card h-100">
-        <img src="" class="card-img-top" alt="...">
+        <img src=" https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">${book.publish_date}</h5>
-            <p class="card-text">${book.author_name}..</p>
+        <h5 class="card-title">Name:${book.subject}</h5>
+            <h5 class="card-title">Publication Date:${book.first_publish_year}</h5>
+            <p class="card-text">Author Name:${book.author_name}</p>
         </div>
     </div>
       
