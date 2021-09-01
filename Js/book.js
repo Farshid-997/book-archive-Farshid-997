@@ -11,6 +11,7 @@ const searchBook = () => {
 const displaySearchResult = books => {
     const searchResult = document.getElementById('search-result')
     books.forEach(book => {
+        console.log(book)
         const div = document.createElement('div')
         div.classList.add('col')
         div.innerHTML = `
