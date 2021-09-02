@@ -1,7 +1,15 @@
 const searchBookFromData = () => {
 
-    let searchField = document.getElementById('search-field');
-    let searchText = searchField.value;
+    const searchField = document.getElementById('search-field');
+
+    const totalBooks = document.getElementById('total-count')
+    totalBooks.innerHTML = ``
+
+    const errorMsg = document.getElementById('err-msg')
+
+    errorMsg.innerHTML = ``
+
+    const searchText = searchField.value;
 
 
     // clear field
@@ -13,7 +21,7 @@ const searchBookFromData = () => {
 
         const errMsg = document.getElementById('err-msg')
         const p = document.createElement('p')
-        p.innerText = `Your Book name is not found`
+        p.innerText = `Your Book name is not found`;
 
         errMsg.appendChild(p)
 
@@ -26,6 +34,7 @@ const searchBookFromData = () => {
             .then(response => response.json())
 
             .then(data => displayBookSearchResult(data))
+        errMsg.textContent = ''
     }
 }
 
@@ -38,6 +47,7 @@ const displayBookSearchResult = books => {
     const p = document.createElement('p')
     p.innerText = `Total Books Found:${books.numFound}`
     totalCount.appendChild(p)
+
 
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
@@ -55,7 +65,7 @@ const displayBookSearchResult = books => {
             <div class="card-body">
             <h4 class="card-title">Book's Name:${book.title}</h4>
             
-              <h5 class="card-title  text-success">Author Name:${book.author_name}</h5>
+              <p class="card-title  text-success">Author Name:${book.author_name}</>
               <p class="card-text">Publisher:${book.publisher}</p>
               <p class="card-text">First Publication Year:${book.first_publish_year}</p>
             </div>
