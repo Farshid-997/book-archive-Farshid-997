@@ -36,7 +36,7 @@ const searchBookFromData = () => {
             .then(response => response.json())
 
             .then(data => displayBookSearchResult(data))
-        errMsg.textContent = ''
+
     }
 }
 
