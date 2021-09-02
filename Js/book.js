@@ -6,6 +6,8 @@ const searchBookFromData = () => {
 
     // clear field
     searchField.value = '';
+
+    // check error
     if (searchText == '') {
 
 
