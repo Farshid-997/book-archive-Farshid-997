@@ -2,6 +2,8 @@ const searchBookFromData = () => {
 
     const searchField = document.getElementById('search-field');
 
+    const searchText = searchField.value;
+
     const totalBooks = document.getElementById('total-count')
     totalBooks.innerHTML = ``
 
@@ -9,7 +11,7 @@ const searchBookFromData = () => {
 
     errorMsg.innerHTML = ``
 
-    const searchText = searchField.value;
+
 
 
     // clear field
