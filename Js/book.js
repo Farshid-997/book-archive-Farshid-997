@@ -2,7 +2,8 @@ const searchBookFromData = () => {
 
     let searchField = document.getElementById('search-field');
     let searchText = searchField.value;
-    console.log(searchText);
+
+
     // clear data
     searchField.value = '';
     if (searchText == '') {
@@ -31,9 +32,7 @@ const displayBookSearchResult = books => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
 
-    if (books.length == 0) {
-        // show no result
-    }
+
     books.docs.forEach(book => {
 
         let div = document.createElement('div');
@@ -41,12 +40,12 @@ const displayBookSearchResult = books => {
 
 
         div.innerHTML = `
-        <div  class="card">
+        <div  class="card h-100" >
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">${book.title}</h5>
-              <h5 class="card-title">${book.author_name}</h5>
-              <p class="card-text">${book.first_publish_year}</p>
+            <h4 class="card-title">Book's Name:${book.title}</h4>
+              <h5 class="card-title  text-success">Author Name:${book.author_name}</h5>
+              <p class="card-text">First Publication Year:${book.first_publish_year}</p>
             </div>
           </div>
         `;
