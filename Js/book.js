@@ -53,7 +53,7 @@ const displayBookSearchResult = books => {
             <div class="card-body">
             <h4 class="card-title">Book's Name:${book.title}</h4>
             
-              <h5 class="card-title  text-success">Author Name:${book.author_name[0]}</h5>
+              <h5 class="card-title  text-success">Author Name:${book.author_name}</h5>
               <p class="card-text">First Publication Year:${book.first_publish_year}</p>
             </div>
           </div>
