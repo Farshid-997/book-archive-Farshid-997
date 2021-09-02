@@ -4,13 +4,13 @@ const searchBookFromData = () => {
     let searchText = searchField.value;
 
 
-    // clear data
+    // clear field
     searchField.value = '';
     if (searchText == '') {
         alert('Write a Book Name')
     }
     else {
-        // load data
+        // load the api data
         const url = `https://openlibrary.org/search.json?q=${searchText}`;
         fetch(url)
             .then(response => response.json())
@@ -20,7 +20,7 @@ const searchBookFromData = () => {
 }
 
 
-
+//display the book search result in this function
 const displayBookSearchResult = books => {
 
 
@@ -38,7 +38,7 @@ const displayBookSearchResult = books => {
         let div = document.createElement('div');
         div.classList.add('col');
 
-
+        //show result in a card
         div.innerHTML = `
         <div  class="card h-100" >
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
